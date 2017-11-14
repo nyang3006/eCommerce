@@ -1,0 +1,269 @@
+<!doctype HTML>
+<html>
+    <head>
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+        <title>Today's Deals!</title>
+        <style>
+            nav{
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                background-color: rgba(82,82,82,0.4);
+                margin: 0;
+            }
+            body{
+                color: silver;
+                font-family: "Audiowide";
+                background-image:url("Tech/back.jpg");
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 100%;
+                height: 100%;
+                text-align: center
+
+            }
+            
+        
+            p{
+                font-size: 15pt;
+                text-align: center;
+            }
+
+                
+            .parallax{
+                background-image:url("Tech/back.png");
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                
+                
+                height: 100%;
+                width: 100%;
+            }
+            #dakra{
+                display: flex;
+                justify-content: space-around;
+                
+
+            }
+            #nekros{
+                display: flex;
+                justify-content: space-around;
+
+            }
+            #sybaris{
+                display: flex;
+                justify-content: space-around;
+
+            }
+            input{
+                display: block;
+                margin: 0 auto;
+            }
+            button{
+                display: block;
+                margin: 0 auto;
+
+            }
+            #output{
+                display: block;
+                font-size: 25pt;
+                background-color: rgba(0,0,0,0.5);
+                width: 500px;
+
+            }
+            #p1{
+                font-size: 100px
+            }
+            #p2{
+                font-size: 10pt;
+            }
+            
+            h2{
+                text-align: center;
+                font-size: 20pt;
+                margin-top: 0;
+
+            }
+            footer{
+                margin: 100px;
+            } 
+            #dakra1{
+                border: solid;
+                background-color: rgba(0, 0, 0, 0.7);
+                border-color:rgba(0, 0, 0, 0.7);
+            }
+            #nekros1{
+                border: solid;
+                background-color: rgba(0, 0, 0, 0.7);
+                border-color:rgba(0, 0, 0, 0.7);
+
+            }
+            #sybaris1{
+                border: solid;
+                background-color: rgba(0, 0, 0, 0.7);
+                border-color:rgba(0, 0, 0, 0.7);
+            }
+
+           
+        </style>
+        <script>
+           
+           function calculateTotal(){
+            var price1 = 18.00; 
+            var price2 = 82.50;
+            var price3 = 10.50;
+            var wp1 = 9.00;
+            var wp2 = 41.25;
+            var wp3 = 5.25;
+            var quan1 = document.getElementById("q1").value;
+            var quan2 = document.getElementById("q2").value;
+            var quan3 = document.getElementById("q3").value;
+            var customerSubtotal = (price1 * quan1) + (price2 * quan2) + (price3 * quan3);
+            var companySubtotal = (wp1 * quan1) + (wp2 * quan2) + (wp3 * quan3);
+            var tax = customerSubtotal * 0.0875;
+            var shipping = 0;
+            var total = (customerSubtotal + tax + shipping);
+            var op = document.getElementById("output");
+            var sold = Number(quan1) + Number(quan2) + Number(quan3);
+            var profit = customerSubtotal - companySubtotal;
+            
+            
+            
+            
+
+            if(customerSubtotal <100){
+                shipping = 25;
+            }else if(customerSubtotal >=100 && customerSubtotal <= 200){
+                shipping = 10;
+            }else{
+                shipping = 0;
+            }
+        
+
+            var build = "";
+               build += "Customer Info:";
+               build += "<br>";
+               build += "Subtotal: $" + customerSubtotal.toFixed(2);
+               build += "<br>";
+               build += "Tax: $" + tax.toFixed(2);
+               build += "<br>";
+               build += "Shipping Cost: $" + shipping;
+               build += "<br>";
+               build += "Total: $" + total.toFixed(2);
+               build += "<hr>";
+               build += "Company Info:";
+               build += "<br>";
+               build += "Customer Subtotal: $" + customerSubtotal.toFixed(2);
+               build += "<br>";
+               build += "Company Subtotal: $" + companySubtotal.toFixed(2);
+               build += "<br>";
+               build += "Profit: $" + profit.toFixed(2);
+               build += "<br>";
+               build += "Total Items Sold: " + sold;
+            
+               
+               
+
+               op.innerHTML = build;
+            
+           
+
+               }
+            
+           
+            
+            
+        
+        </script>
+    </head>
+    <body>
+        <div id = "nav">
+            <nav>
+                <ul>
+                     <a href = "test2.html"><img id = logo src='Tech/logo.webp' width="150px" height="150px"></a> <h2>Nelson's Market</h2>
+                </ul>
+                
+            </nav>
+        </div>
+        <hr>
+    <div class="parallax2">
+        <div class="parallax">
+            <h1>Check out these exclusive deals!</h1>
+                <div id = "dakra">
+                    <img src=" Tech/item1.webp" width = "512px" height="320px">
+                    <p id = "p1"> =</p>
+                    <img src=" Tech/item1-1.png" width = "128px" height="112px">
+                    <img src=" Tech/item1-2.png" width = "91px" height="128px">
+                    <img src=" Tech/item1-3.png" width = "128px" height="112px">
+                </div>
+            <div id="dakra1">
+        <p><b>Dakra Prime Set</b>
+                <br>
+                <b> Price: <strike>$22.50</strike>  $18.00!! 20% off!</b>
+                <!--Wholesale: $9.00-->
+            </p>
+        <p>Select Quanity</p>
+            <input type="text" id ="q1" placeholder="Enter Quanity">
+            </div>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <br>
+                <div id = "nekros">
+                    <img src=" Tech/item2.png" width = "512px" height="342px">
+                    <p id = "p1"> =</p>
+                    <img src=" Tech/item2-1.png" width = "108px" height="128px">
+                    <img src=" Tech/item2-2.png" width = "73px" height="128px">
+                    <img src=" Tech/item2-3.png" width = "78px" height="128px">
+                    <img src=" Tech/item1-3.png" width = "128px" height="112px">
+            
+                </div>
+            <div id="nekros1">
+        <p><b>Nekros Prime Set</b>
+                <br>
+                <b> Price: <strike>$30.00</strike>  $22.50!! 25% off!</b>
+                <!--Wholesale: $11.25-->
+            </p>
+        <p>Select Quanity</p>
+            <input type="text" id ="q2" placeholder="Enter Quanity">
+            </div>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <br>
+                <div id = "sybaris">
+                    <img src=" Tech/item3.png" width = "480px" height= "178px">
+                    <p id = "p1"> =</p>
+                    <img src=" Tech/item3-1.png" width = "128px" height="85px">
+                    <img src=" Tech/item3-2.png" width = "89px" height="128px">
+                    <img src=" Tech/item3-3.png" width = "112px" height="128px">
+                    <img src=" Tech/item1-3.png" width = "128px" height="112px">
+           
+                </div>
+            <div id="sybaris1">
+         <p><b>Sybaris Prime Set</b>
+                <br>
+                <b> Price: <strike>$15.00</strike>  $10.50!! 30% off!</b>
+                <!--Wholesale: $5.25-->
+            </p>
+            
+        <p>Select Quanity</p>
+            <input type="text" id ="q3" placeholder="Enter Quanity">
+            </div>
+        <br>
+        <button onclick= "calculateTotal()">Checkout</button>
+        <div id = "output"></div>
+        </div>
+    </div>
+      
+
+    </body>
+    <footer>
+        <p id = "p2">©2017 Yang, Inc. All rights reserved.</p>
+    </footer>
+</html>
